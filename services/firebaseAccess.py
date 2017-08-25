@@ -2,6 +2,7 @@
 
 from firebase import firebase
 
+
 class FireBase(object):
 
     def __init__(self):
