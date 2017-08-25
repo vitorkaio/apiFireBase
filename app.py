@@ -2,6 +2,7 @@
 
 from flask import Flask, jsonify
 from services.firebaseAccess import FireBase
+import os
 
 app = Flask(__name__)
 
@@ -12,4 +13,5 @@ def hello_world():
 # **************************************** Init ****************************************
 if __name__ == "__main__":
     af = FireBase()
-    app.run(host='0.0.0.0', port=5000, threaded=True, debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
