@@ -2,7 +2,7 @@
 
 from firebase import firebase
 from models.usuario import Usuario
-
+import json
 
 class FireBase(object):
 
@@ -30,3 +30,15 @@ class FireBase(object):
     def getUsuario(self, nome):
         res = self.__getUserFireBase(nome)
         return res
+
+    def login(self, data):
+        nome = data['nome']
+        dados = self.__getUserFireBase(nome)
+
+        if dados != None:
+            if dados['senha'] != data['senha']:
+                return None
+            else:
+                dados
+
+        return dados

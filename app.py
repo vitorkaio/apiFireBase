@@ -4,6 +4,7 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 from services.firebaseAccess import FireBase
 import os
+import json
 from services.cross import crossdomain
 
 app = Flask(__name__)
@@ -24,9 +25,10 @@ def getusuario(nome):
 @app.route("/doLogin", methods=['POST'])
 @cross_origin()
 def doLogin():
-    print 'VAIIIIIIIIIIIIIIIIIII'
-    print request.data
-    return 'ok', 200
+    dados = request.data
+    res = af.login(json.loads((dados)))
+    print res
+    return jsonify(res), 200
 
 
 # **************************************** Init ****************************************
