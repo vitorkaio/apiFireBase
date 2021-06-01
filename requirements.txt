@@ -33,7 +33,7 @@ requests==2.11.1
 requests-toolbelt==0.7.0
 rsa==3.4.2
 six==1.10.0
-urllib3==1.21.1
+urllib3==1.26.5
 virtualenv==15.1.0
 Werkzeug==0.12.2
 whitenoise==3.3.0
